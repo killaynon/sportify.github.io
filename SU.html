@@ -1,0 +1,197 @@
+<doctype html>
+<html>
+<head>
+	<title>Sign Up with Sportify</title>
+<style>
+label{
+font-size: 20px;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+ background-image:url('1.jpeg');
+ background-repeat: no-repeat;
+background-size: cover;
+  padding: 100px;
+	}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #ccffff;
+  padding: 100px;
+text-align: center;
+	}
+
+input{
+border: none;
+border-bottom: 1px solid;
+background: transparent;
+}
+a{
+color: Red;
+text-strength: 800;
+font-style: sans-serif;
+text-decoration: none;
+float: right;
+}
+</style>
+<script>
+function matchpass(){  
+var h=document.f1.h.value;  
+var l=document.f1.l.value;
+  
+if(h==l && h.length>6 && l.length>6){ 
+return true;
+}  
+else if(h==l &&(h.length<6||l.length<6)){  
+alert("Password must be at least 6 characters long");
+return false;
+}
+else if(h!=l&&(h.length>6||l.length>6)){  
+alert("Password must be the same!");
+return false;   
+}
+}
+function validateform(){  
+var w=document.f1.w.value;   
+var k=document.f1.k.value;
+var s=document.f1.s.value;
+var v=document.f1.v.value;
+ 
+if (w==""){  
+alert("Please type in your First name");  
+return false;  
+}
+else if(v==""){
+alert("Please type in Your Surname");
+return false;
+}
+else if(k==""){
+alert("Please type in Your username");
+return false;
+}
+else if(isNaN(s)||s<18){
+alert ("You are too young for this site!");
+return false;
+  }
+} 
+function Mf()
+{
+var regx=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(.[a-zA-Z0-9-]+)*$/;
+if (mail.value.match(regx)) {
+    document.f1.mail.focus();
+
+    return true;
+
+  } else {
+
+    alert("Invalid email address!");
+
+    document.f1.mail.focus();
+
+    return false;
+  }
+}
+function W(){
+if ( ( f1.gender[0].checked == false ) && ( f1.gender[1].checked == false ) )
+{
+alert ( "Please choose your Gender: Male or Female" );
+return false;
+}
+}
+</script>
+</head>
+<body onload='document.f1.mail.focus()'>
+<div>
+<section>
+<nav>
+<h1 style="text-align:center; color: rgb(255, 0, 0); font-size: 80px">Welcome to the world of sports. </h1>
+</nav>
+<article>
+	<p><a href="../sports/Football.html">Go Back</a><p>
+	<p><h1 style="font-size: 50px; text-align:center;">Sign Up</h1></p>
+	<form name="f1">
+		
+		
+		<p><label>First Name</label><br>
+		<input type="text" name="w" id="w"placeholder="First Name" autofocus><br/></p>
+		
+		<p><label> Surname</label><br>
+		<input type="text" name="v" id="v" placeholder="Last Name"><br/></p>
+		
+		<p><label>Username</label><br>
+		<input type="text" id="k" name="k"><br/></p>
+		
+		<p><label> Age</label><br>
+		<input type="number" name="s" id="s" placeholder="Input Your Age"><br/></p>
+		
+		<p><label>Gender</label></p>
+		<p><input type="radio" name="gender" id="0">Female</p>
+		<p><input type="radio" name="gender" id="1">Male</p>
+
+		<p><label> Email Adress</label><br>
+		<input type="email" id="mail" placeholder="Your Personal E-Mail"><br></p>
+		
+		<p><label> Password</label><br>
+		<input type="password" name="h" id="h" placeholder="Password"><br/></p>
+	
+		<p><label>Re-Enter Password</label><br>
+		<input type="password" name="l" id="l"placeholder="Password"><br/></p>
+
+		<p><label> Date of Birth</label><br>
+		<input type="date"><br></p>
+		
+		<p><label>Institution Level</label><br>
+		<form action="/action_page.php">
+		<input list="Institution Level">
+		<datalist id="Institution Level">
+		<option value="Primary"></option>
+    		<option value="Secondary"></option>
+    		<option value="Tertiary"></option>
+    		<option value="NYSC"></option>
+		<option value="Masters"></option>
+		<option value="Worker"></option>
+		 </select></p>
+		
+		<label>Country of residence</label><br>
+		<form action="/action_page.php">
+		<input list="Country of residence">
+		<datalist id="Country of residence">
+   		<option value="Nigeria">Nigeria</option>
+    		<option value="UK"></option>
+    		<option value="USA"></option>
+    		<option value="Germany"></option>
+		<option value="Brazil"></option>
+		<option value="China"></option>
+  		</datalist>
+		
+
+		<p><label>Telephone Number</label><br>
+		<input type="tel"></p>
+
+		<h3>Hobbies</h3>
+		<input type="checkbox">
+		<label>Playing Games</label>
+		<input type="checkbox">
+		<label>Footbal</label>
+		<input type="checkbox">
+		<label>Dancing</label>
+		<input type="checkbox">
+		<label>Reading</label>
+
+
+		
+
+		<button type="submit" onclick="validateform();matchpass();Mf();W();">Sign Up</button>
+
+</body>
+</html>
